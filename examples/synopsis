@@ -1,0 +1,11 @@
+#!/usr/bin/env raku
+
+use RPi::Device::DS18B20;
+
+my $t = RPi::Device::DS18B20.new;
+
+for $t.thermometers -> $thermometer {
+    say $thermometer.name, ":\t", $thermometer.temperature;
+}
+
+# vim: ft=raku

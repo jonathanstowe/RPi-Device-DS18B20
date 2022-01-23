@@ -1,0 +1,13 @@
+#!/usr/bin/env raku
+
+use RPi::Device::DS18B20;
+
+my $t = RPi::Device::DS18B20.new;
+
+react {
+    whenever $t -> $reading {
+        say $reading.when, "\t", $reading.name, "\t", $reading.temperature;
+    }
+}
+
+# vim: ft=raku
