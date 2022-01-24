@@ -1,0 +1,151 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "directory",
+          "name": "RPi",
+          "children": [
+            {
+              "name": "Device",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "DS18B20.rakumod",
+                  "type": "file"
+                }
+              ],
+              "purpose": null
+            }
+          ],
+          "purpose": null
+        }
+      ],
+      "name": "lib",
+      "type": "directory",
+      "purpose": null
+    },
+    {
+      "type": "file",
+      "name": "META6.json"
+    },
+    {
+      "name": "Changes",
+      "type": "file"
+    },
+    {
+      "name": "LICENCE",
+      "type": "file"
+    },
+    {
+      "name": "README.md",
+      "type": "file"
+    },
+    {
+      "type": "directory",
+      "purpose": null,
+      "children": [
+        {
+          "type": "file",
+          "name": "synopsis"
+        },
+        {
+          "type": "file",
+          "name": "synopsis-async"
+        }
+      ],
+      "name": "examples"
+    },
+    {
+      "name": "t",
+      "children": [
+        {
+          "name": "sys",
+          "children": [
+            {
+              "purpose": null,
+              "children": [
+                {
+                  "type": "directory",
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "28-012113620c31",
+                          "purpose": null,
+                          "type": "directory",
+                          "children": [
+                            {
+                              "type": "file",
+                              "name": "name"
+                            },
+                            {
+                              "type": "file",
+                              "name": "uevent"
+                            },
+                            {
+                              "name": "w1_slave",
+                              "type": "file"
+                            },
+                            {
+                              "type": "file",
+                              "name": "resolution"
+                            },
+                            {
+                              "type": "file",
+                              "name": "alarms"
+                            },
+                            {
+                              "name": "conv_time",
+                              "type": "file"
+                            },
+                            {
+                              "type": "file",
+                              "name": "temperature"
+                            },
+                            {
+                              "name": "ext_power",
+                              "type": "file"
+                            },
+                            {
+                              "type": "file",
+                              "name": "id"
+                            },
+                            {
+                              "name": "features",
+                              "type": "file"
+                            }
+                          ]
+                        }
+                      ],
+                      "purpose": null,
+                      "type": "directory",
+                      "name": "devices"
+                    }
+                  ],
+                  "purpose": null,
+                  "name": "w1"
+                }
+              ],
+              "name": "bus",
+              "type": "directory"
+            }
+          ],
+          "purpose": null,
+          "type": "directory"
+        },
+        {
+          "type": "file",
+          "name": "00100-meta.t"
+        },
+        {
+          "type": "file",
+          "name": "00200-basic.t"
+        }
+      ],
+      "type": "directory",
+      "purpose": null
+    }
+  ],
+  "type": "layout"
+}
