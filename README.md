@@ -2,6 +2,8 @@
 
 Interface to the DS18B20 digital thermometer from Maxim Integrated
 
+[![CI](https://github.com/jonathanstowe/RPi-Device-DS18B20/actions/workflows/main.yml/badge.svg)](https://github.com/jonathanstowe/RPi-Device-DS18B20/actions/workflows/main.yml)
+
 ## Synopsis
 
 
