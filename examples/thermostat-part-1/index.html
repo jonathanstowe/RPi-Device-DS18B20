@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Temperatures</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <table id="temperatures">
+        </table>
+        <script>
+            var sse = new EventSource('/readings');
+            sse.addEventListener("reading", function (e) {
+                const message = JSON.parse(e.data);
+                if ( $('#' + message.id).length ) {
+                    $('#' + message.id).html(message.temperature.toFixed(2));
+                }
+                else {
+                    var row = '<tr><td>' + message.name + '</td><td id="' + message.id + '">' + message.temperature.toFixed(2) + '</td></tr>';
+                    $('#temperatures').append(row);
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+#!/usr/bin/env raku
+
+
+use Cro::HTTP::Router;
+use Cro::HTTP::Server;
+
+use EventSource::Server;
+use RPi::Device::DS18B20;
+use JSON::Class;
+
+class TemperatureEvent does JSON::Class {
+    has Str         $.name;
+    has Str         $.id;
+    has Numeric     $.temperature;
+    has DateTime    $.when is marshalled-by('Str');
+}
+
+my %id-name-lookup = (
+    '28-012113620c31'   => 'Upstairs',
+    '28-03213194ea4f'   => 'Downstairs'
+);
+
+
+my $ds18b2 = RPi::Device::DS18B20.new(supply-interval => 10);
+my $supply = $ds18b2.Supply.map( -> $r { TemperatureEvent.new( id => $r.name, name => %id-name-lookup{$r.name}, temperature => $r.temperature, when => $r.when ) }).map( -> $te { EventSource::Server::Event.new(type => 'reading', data => $te.to-json(:!pretty)) } );
+
+my $es = EventSource::Server.new(:$supply, :keepalive, keepalive-interval => 1 );
+
+my $app = route {
+    get -> {
+        static $*PROGRAM.parent, 'index.html';
+    }
+    get -> 'readings' {
+        content 'text/event-stream', $es.out-supply;
+    }
+};
+
+my Cro::Service $temps = Cro::HTTP::Server.new(:host<0.0.0.0>, :port<7798>, application => $app);
+
+$temps.start;
+
+react whenever signal(SIGINT) { $temps.stop; exit; }
+
