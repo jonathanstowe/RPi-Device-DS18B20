@@ -1,29 +1,29 @@
 {
+  "description": "Interface to the DS18B20 digital thermometer from Maxim Integrated",
+  "support": {
+    "source": "git://github.com/jonathanstowe/RPi-Device-DS18B20.git",
+    "email": "jns+gh@gellyfish.co.uk"
+  },
   "depends": null,
-  "raku": "6.d",
+  "license": "Artistic-2.0",
   "authors": [
     "Jonathan Stowe <jns+gh@gellyfish.co.uk>"
   ],
-  "name": "RPi::Device::DS18B20",
-  "provides": {
-     "RPi::Device::DS18B20": "lib/RPi/Device/DS18B20.rakumod"
-  },
-  "license": "Artistic-2.0",
-  "description": "Interface to the DS18B20 digital thermometer from Maxim Integrated",
-  "auth": "github:jonathanstowe",
-  "meta-version": "0",
-  "support": {
-    "email": "jns+gh@gellyfish.co.uk",
-    "source": "git://github.com/jonathanstowe/RPi-Device-DS18B20.git"
-  },
+  "resources": [
+  ],
   "tags": [
   ],
-  "build-depends": [
-  ],
-  "source-url": "git://github.com/jonathanstowe/RPi-Device-DS18B20.git",
+  "raku": "6.d",
+  "meta-version": "0",
   "test-depends": [
   ],
-  "version": "0.0.1",
-  "resources": [
-  ]
+  "source-url": "git://github.com/jonathanstowe/RPi-Device-DS18B20.git",
+  "build-depends": [
+  ],
+  "auth": "zef:jonathanstowe",
+  "version": "0.0.2",
+  "name": "RPi::Device::DS18B20",
+  "provides": {
+    "RPi::Device::DS18B20": "lib/RPi/Device/DS18B20.rakumod"
+  }
 }
