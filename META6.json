@@ -21,7 +21,7 @@
   "build-depends": [
   ],
   "auth": "zef:jonathanstowe",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "name": "RPi::Device::DS18B20",
   "provides": {
     "RPi::Device::DS18B20": "lib/RPi/Device/DS18B20.rakumod"
